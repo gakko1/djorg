@@ -4,7 +4,6 @@ from .forms import BookmarkForm
 from .models import Bookmark, PersonalBookmark
 
 def index(request):
-  print('HELLO')
   if request.method == 'DELETE':
     object_id = request.delete['id']
     to_delete = Bookmark.objects.filter(pk=object_id)

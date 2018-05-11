@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-from decouple import config
+from decouple import config, RepositoryEnv
 import dj_database_url
 import django_heroku
 
@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY')
 # 'srzq_(((zm42(c!rk#p(b_yikg9qwf=#o@s-wv0!+l8v$64t17'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -82,6 +82,7 @@ WSGI_APPLICATION = 'djorg.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
