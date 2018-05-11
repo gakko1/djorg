@@ -1,1 +1,1 @@
-web: gunicorn gakko-djorg.wsgi
+web: gunicorn djorg.wsgi
