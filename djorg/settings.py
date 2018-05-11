@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # 'srzq_(((zm42(c!rk#p(b_yikg9qwf=#o@s-wv0!+l8v$64t17'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool, default=False)
+DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = [host.strip() for host in config('ALLOWED_HOSTS').split(',')]
 
