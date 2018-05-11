@@ -1,0 +1,34 @@
+{% extends "djorg_base.html" %}
+{% load static %}
+
+{% block content %}
+<h1>Bookmarks</h1>
+
+{% if bookmarks %}
+<h2>Public</h2>
+<ol>
+  {% for bookmark in bookmarks %}
+  <li><a href="{{ bookmark.url }}">{{ bookmark.name }}</a></li>
+  <form method="DELETE" class="bookmark-delete-form">
+    <input type="hidden" name="id" value="{{ bookmark.id }}" />
+    <button name="delete" type="submit" class="btn btn-default">Delete</button>
+  </form>
+  {% endfor %}
+</ol>
+{% else %}
+<p>No bookmarks available</p>
+{% endif %}
+
+{% if bookmarks %}
+<h2>Personal</h2>
+<ol>
+  {% for bookmark in personal_bookmarks %}
+  <li><a href="{{ bookmark.url }}">{{ bookmark.name }}</a></li>
+  {% endfor %}
+</ol>
+{% else %}
+<p>No personal bookmarks available</p>
+{% endif %}
+
+{% include "bookmarks/form.html" %}
+{% endblock %}

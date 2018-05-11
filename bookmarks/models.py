@@ -1,6 +1,6 @@
 from uuid import uuid4
+from django.contrib.auth.models import User
 from django.db import models
-from django.forms import ModelForm
 
 class Bookmark(models.Model):
   id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
@@ -10,7 +10,5 @@ class Bookmark(models.Model):
   created_at = models.DateTimeField(auto_now_add=True)
   last_modified = models.DateTimeField(auto_now=True)
 
-class BookmarkForm(ModelForm):
-  class Meta:
-    model = Bookmark
-    fields = ['url', 'name', 'notes']
+class PersonalBookmark(models.Model):
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
