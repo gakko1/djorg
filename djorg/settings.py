@@ -30,7 +30,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.herokuapp.com', '.localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -82,7 +82,6 @@ WSGI_APPLICATION = 'djorg.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-DATABASE = {}
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
