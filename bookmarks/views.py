@@ -1,13 +1,12 @@
-from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from .forms import BookmarkForm
 from .models import Bookmark, PersonalBookmark
 
 def index(request):
-  if request.method == 'DELETE':
-    object_id = request.delete['id']
-    to_delete = Bookmark.objects.filter(pk=object_id)
-    to_delete.delete()
+  # if request.method == 'DELETE':
+  #   object_id = request.delete['id']
+  #   to_delete = Bookmark.objects.filter(pk=object_id)
+  #   to_delete.delete()
   if request.method == 'POST':
     form = BookmarkForm(request.POST)
     if form.is_valid():
