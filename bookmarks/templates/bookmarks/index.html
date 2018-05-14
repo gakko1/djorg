@@ -9,10 +9,10 @@
 <ol>
   {% for bookmark in bookmarks %}
   <li><a href="{{ bookmark.url }}">{{ bookmark.name }}</a></li>
-  <form method="DELETE" class="bookmark-delete-form">
+  <!-- <form method="DELETE" class="bookmark-delete-form">
     <input type="hidden" name="id" value="{{ bookmark.id }}" />
     <button name="delete" type="submit" class="btn btn-default">Delete</button>
-  </form>
+  </form> -->
   {% endfor %}
 </ol>
 {% else %}
