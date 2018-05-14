@@ -4,7 +4,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>{% block title %}Djorg{% endblock %}</title>
+    {% block title %}
+      <title>Djorg</title>
+    {% endblock %}
     {# Load Bootstrap CSS and JavaScript #}
     {% bootstrap_css %}
     {% bootstrap_javascript jquery='full' %}

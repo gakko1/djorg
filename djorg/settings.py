@@ -27,9 +27,9 @@ SECRET_KEY = config('SECRET_KEY')
 # 'srzq_(((zm42(c!rk#p(b_yikg9qwf=#o@s-wv0!+l8v$64t17'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool, default=False)
+DEBUG = config('DEBUG', cast=bool, default=True)
 
-ALLOWED_HOSTS = ['.localhost', 'gakko-djorg.herokuapp.com']
+ALLOWED_HOSTS = ['.localhost', 'gakko-djorg.herokuapp.com/']
 
 
 # Application definition
