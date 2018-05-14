@@ -19,16 +19,5 @@
 <p>No bookmarks available</p>
 {% endif %}
 
-{% if personal_bookmarks %}
-<h2>Personal</h2>
-<ol>
-  {% for bookmark in personal_bookmarks %}
-  <li><a href="{{ bookmark.url }}">{{ bookmark.name }}</a></li>
-  {% endfor %}
-</ol>
-{% else %}
-<p>No personal bookmarks available</p>
-{% endif %}
-
 {% include "bookmarks/form.html" %}
 {% endblock %}
