@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import BookmarkForm
-from .models import Bookmark, PersonalBookmark
+from .models import Bookmark
 
 def index(request):
   if request.method == 'POST':
@@ -12,12 +12,6 @@ def index(request):
     else:
         pass  # TODO alert user that their Bookmark was invalid
   context = {}
-  context['bookmarks'] = Bookmark.objects.exclude(
-    id__in=PersonalBookmark.objects.values_list('id'))
-  if request.user.is_anonymous:
-    context['personal_bookmarks'] = PersonalBookmark.objects.none()
-  else:
-    context['personal_bookmarks'] = PersonalBookmark.objects.filter(
-      user=request.user)
+  context['bookmarks'] = Bookmark.objects.all()
   context['form'] = BookmarkForm()  # TODO: allow editing of existing entities
   return render(request, 'bookmarks/index.html', context)
