@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 3rd party apps
     'bootstrap4',
+    'graphene_django',
     'rest_framework',
     # Our apps
     'bookmarks',
